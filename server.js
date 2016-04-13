@@ -20,7 +20,8 @@ var db = mongoose.connection;
 var router = { 
 	/* TODO */
 	index: require("./routes/index"),
-	chat: require("./routes/chat")
+	chat: require("./routes/chat"),
+	search: require("./routes/search")
 
 };
 
@@ -108,6 +109,8 @@ passport.deserializeUser(function(user, done) {
 /* TODO: Routes for OAuth using Passport */
 app.get("/", router.index.view);
 app.get("/chat", router.chat.view);
+app.get("/search", router.search.view);
+app.post("/share", router.search.send);
 
 app.get('/auth/twitter', passport.authenticate('twitter'));
 app.get('/auth/twitter/callback',

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+</head>
+<body>
+
+	<!-- Move this thing to CSS file later -->
+	<style type="text/css">
+		.form_reset{
+			border: initial;
+		    border-radius: initial;
+		    background-color: initial;
+		    width: initial;
+		    height: initial;
+		}
+	</style>
+
+
+	<h1>SUMMIT-CALIFORNIA EDITION</h1>
+	<!--Help Button-->
+	<div class="btn-group" style="position: fixed; bottom: 0; right: 0;">
+		<button type="button" class="btn btn-default">?</button>
+	</div>
+
+
+	<div class="container" style="">
+		<div class="row" style="margin-top: 20rem;">
+			<div 
+				class="col-xs-4 col-xs-offset-4
+						col-sm-4 col-sm-offset-4
+						col-md-4 col-md-offset-4
+			    		col-lg-4 col-lg-offset-4" 
+			    style="background-color:#fff; width: 40rem; height:40rem;">
+
+
+				<!-- Skill Dropdown menu -->
+				<div class="btn-group">
+				  <button class="btn btn-default 
+				  				dropdown-toggle" 
+				  			type="button" 
+				  			data-toggle="dropdown" 
+				  			aria-haspopup="true" 
+				  			aria-expanded="false">
+				    Skills <span class="caret"></span>
+				  </button>
+				  <ul class="dropdown-menu">
+				    <li><a href="#">Beginner</a></li>
+				    <li><a href="#">Intermediate</a></li>
+				    <li><a href="#">Expert</a></li>
+				    <li><a href="#">God</a></li>
+				  </ul>
+				</div>
+
+
+				<!-- Skill Resort -->
+				<div class="btn-group">
+				  <button class="btn btn-default 
+				  				 dropdown-toggle" 
+				  			type="button" 
+				  			data-toggle="dropdown" 
+				  			aria-haspopup="true" 
+				  			aria-expanded="false">
+				    Location <span class="caret"></span>
+				  </button>
+				  <ul class="dropdown-menu">
+				    <li><a href="#">Snow Summit</a></li>
+				    <li><a href="#">Mammoth</a></li>
+				    <li><a href="#">Heavenly</a></li>
+				  </ul>
+				</div>
+
+				<!--Share Experience-->
+				<form action="/share" method="post" class="form_reset">
+					<div class="btn-group">
+						<input type="submit" value="Share Experience" class="btn btn-default"/>
+					</div>
+				</form>
+
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.js"></script>
+</body>
+</html>
