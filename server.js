@@ -82,7 +82,19 @@ passport.use(
 		    if(!user) {
 		        // (2) since the user is not found, create new user.
 		        // Refer to Assignment 0 to how create a new instance of a model
-		        return done(null, profile);
+				var newUser  = new models.User({
+					"twitterID": profile["id"],
+					"token": token,
+					"username": profile["username"],
+					"displayName": profile["displayName"],
+					"photo": profile["photos"][0]["value"]
+				});
+
+				newUser.save(function() {
+					console.log("New user created and saved");
+				});
+
+				return done(null, profile);
 		    } else {
 		        // (3) since the user is found, update user’s information
 		        process.nextTick(function() {
@@ -114,7 +126,7 @@ app.get("/home", home.view);
 
 app.get('/auth/twitter', passport.authenticate('twitter'));
 app.get('/auth/twitter/callback',
-  passport.authenticate('twitter', { successRedirect: '/chat',
+  passport.authenticate('twitter', { successRedirect: '/search',
                                      failureRedirect: '/login' }));
 
 app.get('/logout', function(req, res){

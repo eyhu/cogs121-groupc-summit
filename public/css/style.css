@@ -9,3 +9,20 @@ body {
 	width: initial;
 	height: initial;
 }
+
+/**
+ * Default styling
+ */
+body {
+    padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+    color: #00B7FF;
+}
+
+/**
+ * Add padding around the buttons
+ */
+
