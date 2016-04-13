@@ -11,13 +11,13 @@ const handlebars = require("express3-handlebars");
 const passport   = require ("passport");
 const overrid    = require("method-override");
 
-
+var home = require("./routes/home");
 
 require("dotenv").load();
 var models = require("./models");
 var db = mongoose.connection;
 
-var router = { 
+var router = {
 	/* TODO */
 	index: require("./routes/index"),
 	chat: require("./routes/chat"),
@@ -30,8 +30,8 @@ var parser = {
     cookie: require("cookie-parser")
 };
 
-var strategy = { 
-	/* TODO */ 
+var strategy = {
+	/* TODO */
 	Twitter: require('passport-twitter')
 };
 
@@ -74,7 +74,7 @@ passport.use(
 	    consumerKey: process.env.TWITTER_CONSUMER_KEY,
 	    consumerSecret: process.env.TWITTER_CONSUMER_SECRET,
 	    callbackURL: "/auth/twitter/callback"
-	}, 
+	},
 	function(token, token_secret, profile, done) {
 	    // What goes here? Refer to step 4.
 	    models.User.findOne({ "twitterID": profile.id }, function(err, user) {
@@ -124,29 +124,30 @@ app.get('/logout', function(req, res){
 
 
 // More routes here if needed
+app.get("/home", home.view);
 /* TODO: Server-side Socket.io here */
 io.on("connection", function(socket) {
 
 
 	//console.log ( "%j", socket.request.session.passport.user );
 	//console.log ( socket.request.session.passport.user.photos[0].value );
-	
+
 	//Create variable user that is parsed user values from passport (Twitter)
-	var user = 
+	var user =
 	{
 		"username": socket.request.session.passport.user.displayName,
- 		"photo": socket.request.session.passport.user.photos[0].value 
+ 		"photo": socket.request.session.passport.user.photos[0].value
 	};
-	
-	
+
+
 
 	//Checks when user disconnected from the Server
 	socket.on('disconnect', function(){
-    	console.log('user disconnected'); 
+    	console.log('user disconnected');
   	});
 
 	socket.on("newsfeed", function(msg) {
-  		
+
 
   		var date = new Date();
 
@@ -159,13 +160,13 @@ io.on("connection", function(socket) {
 		    "message": msg,
 		    "posted": date
 	    });
-	    
+
     	NewsFeed.save();
     	io.emit("newsfeed", NewsFeed );
     // your solution to fill in, see step 7 for details
-    
-  
-    
+
+
+
 	});
 });
 
