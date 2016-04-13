@@ -24,7 +24,7 @@
 		<button type="button" class="btn btn-default">?</button>
 	</div>
 
-
+	<!-- White box -->
 	<div class="container" style="">
 		<div class="row" style="margin-top: 20rem;">
 			<div 
@@ -35,45 +35,33 @@
 			    style="background-color:#fff; width: 40rem; height:40rem;">
 
 
-				
-
 				<!--Share Experience-->
-				<form action="/share" method="post" class="form_reset">
+				<form action="/home" method="get" class="form_reset">
 					<!-- Skill Dropdown menu -->
-					<div class="btn-group">
-					  <button class="btn btn-default 
-					  				dropdown-toggle" 
-					  			type="button" 
-					  			data-toggle="dropdown" 
-					  			aria-haspopup="true" 
-					  			aria-expanded="false">
-					    Skills <span class="caret"></span>
-					  </button>
-					  <ul class="dropdown-menu">
-					    <li><a href="#">Beginner</a></li>
-					    <li><a href="#">Intermediate</a></li>
-					    <li><a href="#">Expert</a></li>
-					    <li><a href="#">God</a></li>
-					  </ul>
+					<div class="form-group">
+					  <label for="sel1">Select Skill Level:</label>
+					  <select class="form-control skill-level" name="level" id="sel1">
+					  	<option selected disabled style="display:none;">Select Your Skill Level</option>
+					    <option>Beginner</option>
+					    <option>Intermediate</option>
+					    <option>Expert</option>
+					    <option>God</option>
+					  </select>
 					</div>
 
 
 					<!-- Skill Resort -->
-					<div class="btn-group">
-					  <button class="btn btn-default 
-					  				 dropdown-toggle" 
-					  			type="button" 
-					  			data-toggle="dropdown" 
-					  			aria-haspopup="true" 
-					  			aria-expanded="false">
-					    Location <span class="caret"></span>
-					  </button>
-					  <ul class="dropdown-menu">
-					    <li><a href="#">Snow Summit</a></li>
-					    <li><a href="#">Mammoth</a></li>
-					    <li><a href="#">Heavenly</a></li>
-					  </ul>
+					<div class="form-group">
+					  <label for="sel1">Select Ski Resort:</label>
+					  <select class="form-control ski-resort" name="resort" id="sel1">
+					  	<option selected disabled style="display:none;">Select a Ski Resort</option>
+					    <option>Snow Summit</option>
+					    <option>Bear Mountain</option>
+					    <option>Mammoth</option>
+					    <option>Snow Valley</option>
+					  </select>
 					</div>
+
 
 					<!-- Share Experience -->
 					<div class="btn-group">

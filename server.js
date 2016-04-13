@@ -110,7 +110,7 @@ passport.deserializeUser(function(user, done) {
 app.get("/", router.index.view);
 app.get("/chat", router.chat.view);
 app.get("/search", router.search.view);
-app.post("/share", router.search.send);
+app.get("/home", home.view);
 
 app.get('/auth/twitter', passport.authenticate('twitter'));
 app.get('/auth/twitter/callback',
@@ -123,8 +123,7 @@ app.get('/logout', function(req, res){
 });
 
 
-// More routes here if needed
-app.get("/home", home.view);
+
 /* TODO: Server-side Socket.io here */
 io.on("connection", function(socket) {
 
