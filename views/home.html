@@ -5,13 +5,13 @@
     <title>Home</title>
 
     <!-- LINKS -->
-    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     <!--  -->
   </head>
   <body>
     <!-- User Introduction -->
     <div class="intro">
-      <h3>Hello <span id="name"></span>!</h3>
+      <h3>Hello {{user}}!</h3>
     </div>
 
     <!-- Skill Dropdown -->
@@ -19,48 +19,78 @@
       <button class="btn btn-primary dropdown-toggle "type="button" data-toggle="dropdown">Skill
       <span class="caret"></span></button>
       <ul class="dropdown-menu">
-        <li>Beginner</li>
-        <li>Intermediate</li>
-        <li>Expert</li>
+        <li><a href="#">Beginner</a></li>
+        <li><a href="#">Intermediate</a></li>
+        <li><a href="#">Expert</a></li>
       </ul>
     </div>
 
     <!-- Place Dropdown -->
     <div class="dropdown">
-      <button class="btn btn-primary dropdown-toggle "type="button" data-toggle="dropdown">Skill
+      <button class="btn btn-primary dropdown-toggle "type="button" data-toggle="dropdown">Location
       <span class="caret"></span></button>
       <ul class="dropdown-menu">
-        <li>Mammoth</li>
-        <li>Tahoe</li>
-        <li>Big Bear</li>
+        <li><a href="#">Snow Summit</a></li>
+        <li><a href="#">Bear Mountain</a></li>
+        <li><a href="#">Mammoth</a></li>
+        <li><a href="#">Snow Valley</a></li>
       </ul>
     </div>
 
     <!-- Logout -->
-    <button type="button" class="btn btn-default btn-md">Log Out</button>
+    <button type="button" class="btn btn-default btn-md" data-toggle="modal" data-target="#logout">Log Out</button>
+    <div id="logout" class="modal fade" role="dialog">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+            <h3>Are you sure you want to log out?</h3>
+          </div>
+          <div class="modal-footer">
+            <a type="button" class="btn btn-danger" href="/logout">Yes, log me out</a>
+            <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Location Chat Heading and Skill Marker-->
     <div class="page-heading">
-      <h1><span id="location-name"></span> <img src="" id="skill-icon"/></h1>
+      <h1><span id="location-name">{{resort}}</span> - {{level}}<img src="" id="skill-icon"/></h1>
     </div>
 
     <!-- Page path -->
     <div class="pg-pth">
-      <h5 class="page-path"></h5>
+      <h5 class="page-path">login/search/home</h5>
     </div>
 
-    <!-- All Chat Elements -->
-
-    <!-- Share -->
+    <!-- Share Elements -->
     <div class="form-group">
       <textarea class="form-control" rows="5" id="share-comment"></textarea>
-      <button type="button" name="share-btn">Share</button>
+      <input type="submit" class="btn btn-primary" value="Share">
     </div>
 
     <!-- Help -->
-    <button type="button" name="help-btn">?</button>
+    <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#helpModal">?</button>
 
+    <div id="helpModal" class="modal fade" role="dialog">
+      <div class="modal-dialog">
 
-    <script src="js/bootstrap.min.js" type="text/javascript"> </script>
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Help</h4>
+          </div>
+          <div class="modal-body">
+            <p>help user here</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+      <script type="text/javascript" src="js/jquery.min.js"></script>
+      <script type="text/javascript" src="js/bootstrap.js"></script>
   </body>
 </html>
