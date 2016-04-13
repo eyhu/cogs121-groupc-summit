@@ -1,3 +1,15 @@
+body {
+	font-family: 'Oxygen', sans-serif;
+}
+
+.form_reset{
+	border: initial;
+	border-radius: initial;
+	background-color: initial;
+	width: initial;
+	height: initial;
+}
+
 /**
  * Default styling
  */
