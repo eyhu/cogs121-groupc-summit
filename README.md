@@ -37,16 +37,21 @@
 Davis Yi:
 - set up the github repository
 - wrote the skeleton code for the search page
+- styled the search page
 
 Elaine Hu:
 - wrote the schema for Mongo
+- styled the home page
 
 Paulo Gonzales:
 - wrote the skeleton code for the home page
+- implemented the backend functionalities for the home page
+- implemented a chat room using socket.io
 
 Yue Eunice Wong:
 - designed the wireframes
 - documented and wrote README
+- added help documentation
 - made sure the app does not violate any heuristics
 
 Mustafa Khan:
