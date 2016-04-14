@@ -12,6 +12,8 @@ var messageSchema = new Mongoose.Schema({
     "user": String,
     "photo": String,
     "message": String,
+    "level": String,
+    "resort": String,
     "posted": Date
 });
 

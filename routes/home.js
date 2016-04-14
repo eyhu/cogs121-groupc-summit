@@ -15,10 +15,16 @@ exports.view = function(req, res){
 	console.log(user);*/
 	console.log ("data passed from search pages are following: %j", req.query );
 
-	 	res.render('home',
-	 			{
-	 				"level": req.query.level,
-	 				"resort": req.query.resort
-	 			}
-			);
+	models.message.find({"level": req.query.level,
+		                   "resort": req.query.resort})
+	               .sort('-posted').exec(displayMessages);
+
+    function displayMessages( err, messages )
+    {
+    	res.render("home", {
+    		"level": req.query.level,
+	 			"resort": req.query.resort,
+    		"newsfeed": messages
+    	}); 
+    };
 }
