@@ -1,96 +1,145 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+  	<meta charset="utf-8">
     <title>Home</title>
 
     <!-- LINKS -->
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+  	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <!-- fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Oxygen' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+    <!-- custom css -->
+    <link rel="stylesheet" href="css/home.css" type="text/css">
     <!--  -->
   </head>
+
   <body>
-    <!-- User Introduction -->
-    <div class="intro">
-      <h3>Hello {{user}}!</h3>
-    </div>
+  <div class="container"> <!-- START CONTAINER -->
+  	<button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#logoutModal" style="float: right;">Log Out</button>
+    <div class="row" id="header"> <!-- START HEADER -->
+      <!--<h4>Hello, {{user}}!</h4>-->
+    </div> <!-- END HEADER-->
 
-    <!-- Skill Dropdown -->
-    <div class="dropdown">
-      <button class="btn btn-primary dropdown-toggle "type="button" data-toggle="dropdown">Skill
-      <span class="caret"></span></button>
-      <ul class="dropdown-menu">
-        <li><a href="#">Beginner</a></li>
-        <li><a href="#">Intermediate</a></li>
-        <li><a href="#">Expert</a></li>
-      </ul>
-    </div>
 
-    <!-- Place Dropdown -->
-    <div class="dropdown">
-      <button class="btn btn-primary dropdown-toggle "type="button" data-toggle="dropdown">Location
-      <span class="caret"></span></button>
-      <ul class="dropdown-menu">
-        <li><a href="#">Snow Summit</a></li>
-        <li><a href="#">Bear Mountain</a></li>
-        <li><a href="#">Mammoth</a></li>
-        <li><a href="#">Snow Valley</a></li>
-      </ul>
-    </div>
+    <div align="center" class="page-heading"> <!-- START PAGE HEADING -->
+    <h3><span id="location-name">{{resort}}</span> -
+    <span id="class-level">{{level}}</span>
+    <img src="" id="skill-icon"/>
+    </h3>
+  </div><!-- END PAGE HEADING -->
 
-    <!-- Logout -->
-    <button type="button" class="btn btn-default btn-md" data-toggle="modal" data-target="#logout">Log Out</button>
-    <div id="logout" class="modal fade" role="dialog">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-body">
-            <h3>Are you sure you want to log out?</h3>
+  <hr class="line2"/>
+
+  <div class="row" id="relocate"> <!-- START RELOCATE -->
+  	<button id="switchBtn" type="button" class="btn btn-default btn-sm btn-block">Switch to different chat</button>
+    <form id="switchForm" action="/home" method="get" class="form_reset">
+    <!-- Skill Dropdown menu -->
+      <div class="form-group">
+        <select class="form-control skill-level" name="level" id="sel1">
+          <option value="wrong" selected disabled style="display:none;">Skill Level</option>
+          <option>Beginner</option>
+          <option>Intermediate</option>
+          <option>Advanced</option>
+          <option>Expert</option>
+        </select>
+      </div>
+
+    <!-- Skill Resort -->
+      <div class="form-group">
+        <select class="form-control ski-resort" name="resort" id="sel2">
+          <option value="wrong" selected disabled style="display:none;">Ski Resort</option>
+            <option>Snow Summit</option>
+            <option>Bear Mountain</option>
+            <option>Mammoth</option>
+            <option>Snow Valley</option>
+          </select>
+      </div>
+      
+
+			<button id="switchGo" type="submit" value="Switch Chats" class="btn btn-primary submit-btn btn-sm btn-block" style="margin-bottom: 5px;">Switch Chats</button>
+    </form>
+    <button id="switchNo" class="btn btn-default btn-sm btn-block">Never mind</button>
+  </div> <!-- END RELOCATE -->
+
+  <hr class="line2"/>
+
+  <!-- CHAT -->
+  <form id="send-message" class="form-group>">
+  	<textarea id="user_input" class="form-control" rows="2" placeholder="Type a new message and click share!"></textarea>
+  </form>
+  <button id="shareBtn" class="btn btn-primary btn-block" value="Share">Share</button>
+  <div id="chatMessages">
+  	<ul id="messages">
+      {{#each newsfeed}}
+      <hr class="line2"/>
+      <li>
+        <div class="user">
+          <div class="user-image">
+            <img src="{{photo}}" alt="">
           </div>
-          <div class="modal-footer">
-            <a type="button" class="btn btn-danger" href="/logout">Yes, log me out</a>
-            <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+          <div class="user-info">
+            <span class="username">{{user}}</span>
+            <br/>
+            <span class="posted">{{posted}}</span>
           </div>
         </div>
-      </div>
-    </div>
+        <div class="message-content">
+          {{message}}
+        </div>
+      </li>
+    {{/each}}
+    </ul>
+  </div>
+  <!-- END CHAT -->
 
-    <!-- Location Chat Heading and Skill Marker-->
-    <div class="page-heading">
-      <h1><span id="location-name">{{resort}}</span> - {{level}}<img src="" id="skill-icon"/></h1>
-    </div>
-
-    <!-- Page path -->
-    <div class="pg-pth">
-      <h5 class="page-path">login/search/home</h5>
-    </div>
-
-    <!-- Share Elements -->
-    <div class="form-group">
-      <textarea class="form-control" rows="5" id="share-comment"></textarea>
-      <input type="submit" class="btn btn-primary" value="Share">
-    </div>
-
-    <!-- Help -->
+  <!-- HELP -->
+  <div class="btn-group" id="helpBtn">
     <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#helpModal">?</button>
+  </div>
 
-    <div id="helpModal" class="modal fade" role="dialog">
-      <div class="modal-dialog">
-
-        <div class="modal-content">
-          <div class="modal-header">
-            <h4 class="modal-title">Help</h4>
-          </div>
-          <div class="modal-body">
-            <p>help user here</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          </div>
+  <!-- MODALS -->
+  <div id="logoutModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-body">
+          <h3>Are you sure you want to log out?</h3>
         </div>
-
+        <div class="modal-footer">
+          <a type="button" class="btn btn-danger" href="/logout">
+            Yes, log me out
+          </a>
+          <button type="button" class="btn btn-default" data-dismiss="modal">
+          No
+          </button>
+        </div>
       </div>
     </div>
+  </div>
 
-      <script type="text/javascript" src="js/jquery.min.js"></script>
-      <script type="text/javascript" src="js/bootstrap.js"></script>
+  <div id="helpModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Help Documentation</h4>
+        </div>
+        <div class="modal-body">
+          <p>The purpose of Summit is to allow users to freely share their experiences at different resorts and communicate with those who share the same interests. Users can decide a chat/community by specificying their skill levels and locations. Just simply start typing, leave your thoughts and click "Share" to post your comment.</p>
+          <p>If you like what others have said, you can also start a one-on-one private conversation. </p>
+          <p>If you have any other questions, please feel free to contact snow@summit.com. </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  </div> <!-- END CONTAINER -->
+
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script src="./js/home.js"></script>
   </body>
+
+
+
 </html>
