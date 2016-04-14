@@ -12,8 +12,8 @@
   - The main navigation bar contains two dropdown menus, which allow users to navigate through different chat rooms.
 
 4. Consistency and standards
-  -The logout button is located on the right-top corner, similar to popular social media websites.
-  -The color scheme and background is consistent throughout the app.
+  - The logout button is located on the right-top corner, similar to popular social media websites.
+  - The color scheme and background is consistent throughout the app.
 
 5. Error prevention
   - Instead of allowing users to type in any locations, we gave them choices by making it a dropdown menu.
