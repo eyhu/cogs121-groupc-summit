@@ -8,75 +8,55 @@
 	<link href='https://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
 	<!-- custom css -->
 	<link rel="stylesheet" href="css/style.css" type="text/css">
+	<link rel="stylesheet" href="css/search.css" type="text/css">
 </head>
 
 <body>
 
-	<!-- Move this thing to CSS file later -->
-	<style type="text/css">
-		.form_reset{
-			border: initial;
-		    border-radius: initial;
-		    background-color: initial;
-		    width: initial;
-		    height: initial;
-		}
-	</style>
-
 
 	<h1>SUMMIT-CALIFORNIA EDITION</h1>
 	<!--Help Button-->
-	<div class="btn-group" style="position: fixed; bottom: 0; right: 0;">
+	<div class="btn-group help-btn">
 		<button type="button" class="btn btn-default">?</button>
 	</div>
 
 	<!-- White box -->
-	<div class="container" style="">
-		<div class="row" style="margin-top: 20rem;">
-			<div 
-				class="col-xs-4 col-xs-offset-4
-						col-sm-4 col-sm-offset-4
-						col-md-4 col-md-offset-4
-			    		col-lg-4 col-lg-offset-4" 
-			    style="background-color:#fff; width: 40rem; height:40rem;">
-
-
-				<!--Share Experience-->
-				<form id="required-form" action="/home" method="get" class="form_reset">
-					<!-- Skill Dropdown menu -->
-					<div class="form-group">
-					  <label for="sel1">Select Skill Level:</label>
-					  <select class="form-control skill-level" name="level" id="sel1">
-					  	<option value="wrong" selected disabled style="display:none;">Select Your Skill Level</option>
-					    <option>Beginner</option>
-					    <option>Intermediate</option>
-					    <option>Expert</option>
-					    <option>God</option>
-					  </select>
-					</div>
+	<div class="row form-row" >
+		<div class ="form-box">
+			<!--Share Experience-->
+			<form id="required-form" action="/home" method="get" class="form_reset">
+				<!-- Skill Dropdown menu -->
+				<div class="form-group">
+				  <label for="sel1">Select Skill Level:</label>
+				  <select class="form-control skill-level" name="level" id="sel1">
+				  	<option value="wrong" selected disabled style="display:none;">Select Your Skill Level</option>
+				    <option>Beginner</option>
+				    <option>Intermediate</option>
+				    <option>Expert</option>
+				    <option>God</option>
+				  </select>
+				</div>
 
 
 
-					<!-- Skill Resort -->
-					<div class="form-group">
-					  <label for="sel1">Select Ski Resort:</label>
-					  <select class="form-control ski-resort" name="resort" id="sel2">
-					  	<option value="wrong" selected disabled style="display:none;">Select a Ski Resort</option>
-					    <option>Snow Summit</option>
-					    <option>Bear Mountain</option>
-					    <option>Mammoth</option>
-					    <option>Snow Valley</option>
-					  </select>
-					</div>
+				<!-- Skill Resort -->
+				<div class="form-group">
+				  <label for="sel1">Select Ski Resort:</label>
+				  <select class="form-control ski-resort" name="resort" id="sel2">
+				  	<option value="wrong" selected disabled style="display:none;">Select a Ski Resort</option>
+				    <option>Snow Summit</option>
+				    <option>Bear Mountain</option>
+				    <option>Mammoth</option>
+				    <option>Snow Valley</option>
+				  </select>
+				</div>
 
 
-					<!-- Share Experience -->
-					<div class="btn-group">
-						<input type="submit" value="Share Experience" class="btn btn-default submit-btn"/>
-					</div>
-				</form>
-
-			</div>
+				<!-- Share Experience -->
+				<div class="btn-group">
+					<input type="submit" value="Share Experience" class="btn btn-default submit-btn"/>
+				</div>
+			</form>
 		</div>
 	</div>
 
