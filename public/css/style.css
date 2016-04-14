@@ -22,7 +22,13 @@ a {
     color: #00B7FF;
 }
 
-/**
- * Add padding around the buttons
- */
 
+.container {
+    padding-top: 174px;
+    padding-bottom: 80px;
+    background-image: url("//res.cloudinary.com/hrscywv4p/image/upload/c_limit,f_auto,h_1500,q_90,w_2000/v1/346044/giphy_hpkb4j.gif");
+    background-color: transparent;
+    background-size: cover;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+}
