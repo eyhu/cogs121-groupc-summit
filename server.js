@@ -11,8 +11,6 @@ const handlebars = require("express3-handlebars");
 const passport   = require ("passport");
 const overrid    = require("method-override");
 
-var home = require("./routes/home");
-
 require("dotenv").load();
 var models = require("./models");
 var db = mongoose.connection;
@@ -21,8 +19,8 @@ var router = {
 	/* TODO */
 	index: require("./routes/index"),
 	chat: require("./routes/chat"),
-	search: require("./routes/search")
-
+	search: require("./routes/search"),
+	home: require("./routes/home")
 };
 
 var parser = {
@@ -122,7 +120,7 @@ passport.deserializeUser(function(user, done) {
 app.get("/", router.index.view);
 app.get("/chat", router.chat.view);
 app.get("/search", router.search.view);
-app.get("/home", home.view);
+app.get("/home", router.home.view);
 
 app.get('/auth/twitter', passport.authenticate('twitter'));
 app.get('/auth/twitter/callback',
