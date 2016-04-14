@@ -49,6 +49,7 @@ function initializePage() {
                 '</div>';
       return result;
      }
+     $('#messages').prepend($('<hr class="line2"/>'));
 	});
 
 	$("#switchForm").submit( function ( event ){
