@@ -13,7 +13,7 @@ exports.view = function(req, res){
 		user = socket.request.session.passport.user.displayName;
 	});
 	console.log(user);*/
-	console.log ("data passed from search pages are following: %j", req.query );
+	//console.log ("data passed from search pages are following: %j", req.query );
 
 	models.message.find({"level": req.query.level,
 		                   "resort": req.query.resort})
