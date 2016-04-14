@@ -13,71 +13,71 @@
     <!--  -->
   </head>
   <body>
-    <!-- User Introduction -->
-    <div class="intro">
-      <h3>Hello {{user}}!</h3>
-    </div>
+    <div class="container">
+      <div class="row">
 
-    <!-- Skill Dropdown -->
-    <div class="dropdown">
-      <button class="btn btn-primary dropdown-toggle "type="button" data-toggle="dropdown">Skill
-      <span class="caret"></span></button>
-      <ul class="dropdown-menu">
-        <li><a href="#">Beginner</a></li>
-        <li><a href="#">Intermediate</a></li>
-        <li><a href="#">Expert</a></li>
-      </ul>
-    </div>
-
-    <!-- Place Dropdown -->
-    <div class="dropdown">
-      <button class="btn btn-primary dropdown-toggle "type="button" data-toggle="dropdown">Location
-      <span class="caret"></span></button>
-      <ul class="dropdown-menu">
-        <li><a href="#">Snow Summit</a></li>
-        <li><a href="#">Bear Mountain</a></li>
-        <li><a href="#">Mammoth</a></li>
-        <li><a href="#">Snow Valley</a></li>
-      </ul>
-    </div>
-
-    <!-- Logout -->
-    <button type="button" class="btn btn-default btn-md" data-toggle="modal" data-target="#logout">Log Out</button>
-    <div id="logout" class="modal fade" role="dialog">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-body">
-            <h3>Are you sure you want to log out?</h3>
+        <!-- User Introduction -->
+          <div class="intro">
+            <h3>Hello {{user}}!</h3>
           </div>
-          <div class="modal-footer">
-            <a type="button" class="btn btn-danger" href="/logout">Yes, log me out</a>
-            <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+
+        <!-- Skill Dropdown -->
+        <div class="dropdown">
+          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Skill
+          <span class="caret"></span></button>
+          <ul class="dropdown-menu">
+            <li><a href="#">Beginner</a></li>
+            <li><a href="#">Intermediate</a></li>
+            <li><a href="#">Expert</a></li>
+          </ul>
+        </div>
+
+        <!-- Place Dropdown -->
+        <div class="dropdown">
+          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Location
+          <span class="caret"></span></button>
+          <ul class="dropdown-menu">
+            <li><a href="#">Snow Summit</a></li>
+            <li><a href="#">Bear Mountain</a></li>
+            <li><a href="#">Mammoth</a></li>
+            <li><a href="#">Snow Valley</a></li>
+          </ul>
+        </div>
+
+        <!-- Logout -->
+        <button type="button" class="btn btn-default btn-md" data-toggle="modal" data-target="#logout">Log Out</button>
+        <div id="logout" class="modal fade" role="dialog">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-body">
+                <h3>Are you sure you want to log out?</h3>
+              </div>
+              <div class="modal-footer">
+                <a type="button" class="btn btn-danger" href="/logout">Yes, log me out</a>
+                <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+              </div>
+            </div>
           </div>
         </div>
+
       </div>
-    </div>
+      <!-- New Row -->
 
-    <!-- Location Chat Heading and Skill Marker-->
-    <div class="page-heading">
-      <h1><span id="location-name">{{resort}}</span> - {{level}}<img src="" id="skill-icon"/></h1>
-    </div>
+        <!-- Location Chat Heading and Skill Marker-->
 
-    <!-- Page path -->
-    <div class="pg-pth">
-      <h5 class="page-path">login/search/home</h5>
-    </div>
+        <div class="page-heading">
+          <h1><span id="location-name">{{resort}}</span> - {{level}}<img src="" id="skill-icon"/></h1>
+        </div>
 
-    <!-- Share Elements -->
-    <div class="form-group">
-      <textarea class="form-control" rows="5" id="share-comment"></textarea>
-      <input type="submit" class="btn btn-primary" value="Share">
-    </div>
+        <!-- Page path -->
+          <h5 class="page-path">login/search/home</h5>
 
-    <!-- Help -->
-    <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#helpModal">?</button>
-
-    <div id="helpModal" class="modal fade" role="dialog">
-      <div class="modal-dialog">
+        <!-- Share Elements -->
+            <!-- Chat Elements: I just copied this code from chat.html.. not really working -->
+            <form id="send-message" class="form-group">
+              <textarea id="user_input" class="form-control" rows="3" placeholder="Type a new message and hit enter!"></textarea>
+              <input type="submit" class="btn btn-primary btn-lg" value="Share">
+            </form>
 
         <div class="modal-content">
           <div class="modal-header">
@@ -90,12 +90,14 @@
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
           </div>
         </div>
-
       </div>
+
     </div>
 
+      <script src="./js/chatbox.js"></script>
       <script type="text/javascript" src="js/jquery.min.js"></script>
       <script type="text/javascript" src="js/bootstrap.js"></script>
   </body>

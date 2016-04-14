@@ -19,13 +19,19 @@
   - Instead of allowing users to type in any locations, we gave them choices by making it a dropdown menu.
 
 6. Recognition rather than recall
-  - 
+  - There is no need for the user to remember how to log in since there is only one button on the login page and the app is connected to the user's Twitter account
+  - The whole user experience is very systematic and does not require any need to recall information from memory.
 
 7. Flexbility and efficiency of use
-8. Aesthetic and minimalistic design
-9. Help users recognize, diagnose, and recover from errors
-10. Help and documentation
 
+8. Aesthetic and minimalistic design
+  - The design of our app focuses on minimalism.
+  - The design is simple and pleasing
+
+9. Help users recognize, diagnose, and recover from errors
+
+10. Help and documentation
+  - There is a help documentation on every page if users ever get confused and lost. 
 
 ## Distribution of Work
 Davis Yi:
@@ -41,7 +47,9 @@ Paulo Gonzales:
 Yue Eunice Wong:
 - designed the wireframes
 - documented and wrote README
+- made sure the app does not violate any heuristics
 
 Mustafa Khan:
 - wrote the skeleton code for the login page
 - implemented the authentication
+- styled the login page
