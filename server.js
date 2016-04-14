@@ -19,9 +19,8 @@ var router = {
 	/* TODO */
 	index: require("./routes/index"),
 	chat: require("./routes/chat"),
-	search: require("./routes/search")
-	home: require("./routes/home");
-
+	search: require("./routes/search"),
+	home: require("./routes/home")
 };
 
 var parser = {

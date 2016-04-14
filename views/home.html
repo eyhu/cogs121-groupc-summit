@@ -13,14 +13,11 @@
       <div class="row">
 
         <!-- User Introduction -->
-        <div class="col-md-4">
           <div class="intro">
             <h3>Hello {{user}}!</h3>
           </div>
-        </div>
 
         <!-- Skill Dropdown -->
-        <div class="col-md-4">
         <div class="dropdown">
           <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Skill
           <span class="caret"></span></button>
@@ -42,10 +39,8 @@
             <li><a href="#">Snow Valley</a></li>
           </ul>
         </div>
-        </div>
 
         <!-- Logout -->
-        <div class="col-md-4">
         <button type="button" class="btn btn-default btn-md" data-toggle="modal" data-target="#logout">Log Out</button>
         <div id="logout" class="modal fade" role="dialog">
           <div class="modal-dialog">
@@ -60,29 +55,27 @@
             </div>
           </div>
         </div>
-        </div>
 
       </div>
       <!-- New Row -->
 
         <!-- Location Chat Heading and Skill Marker-->
-        <div class="row">
-        <div class="col-md-8">
+
         <div class="page-heading">
           <h1><span id="location-name">{{resort}}</span> - {{level}}<img src="" id="skill-icon"/></h1>
         </div>
-        </div>
 
         <!-- Page path -->
-        <div class="col-md-4">
           <h5 class="page-path">login/search/home</h5>
-        </div>
 
         <!-- Share Elements -->
-        <div class="form-group">
-          <textarea class="form-control" rows="5" id="share-comment"></textarea>
-          <input type="submit" class="btn btn-primary btn-lg" value="Share">
-        </div>
+            <!-- Chat Elements: I just copied this code from chat.html.. not really working -->
+            <form id="send-message" class="form-group">
+              <textarea id="user_input" class="form-control" rows="3" placeholder="Type a new message and hit enter!"></textarea>
+              <input type="submit" class="btn btn-primary btn-lg" value="Share">
+            </form>
+
+
 
         <!-- Help -->
         <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#helpModal">?</button>
@@ -108,6 +101,7 @@
 
     </div>
 
+      <script src="./js/chatbox.js"></script>
       <script type="text/javascript" src="js/jquery.min.js"></script>
       <script type="text/javascript" src="js/bootstrap.js"></script>
   </body>
