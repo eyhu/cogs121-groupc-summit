@@ -1,6 +1,11 @@
+body{
+	background-image: url("../img/snow_mountains_50.png");
+}
+
 h1 {
 	text-align: center;
 }
+
 .form-box {
 	background-color:#fff; 
 	
