@@ -29,7 +29,6 @@
   - The design is simple and pleasing
 
 9. Help users recognize, diagnose, and recover from errors
-  -
 
 10. Help and documentation
   - There is a help documentation on every page if users ever get confused and lost. 
