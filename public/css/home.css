@@ -16,7 +16,7 @@ ul {
 }
 
 li {
-	display: inline-block;
+	display: block;
 }
 
 a {
@@ -92,7 +92,7 @@ a {
 @media (min-height: 668px) and (max-height: 736px) {
 	#chatMessages {
 		margin-top: 5px;
-		height: 420px;
+		height: 350px;
 		overflow: auto;
 		background-color: rgba(255, 255, 255, 0.75);
 		border-radius: 4px;
@@ -102,7 +102,7 @@ a {
 @media (min-height: 737px) {
 	#chatMessages {
 		margin-top: 5px;
-		height: 700px;
+		height: 500px;
 		overflow: auto;
 		background-color: rgba(255, 255, 255, 0.75);
 		border-radius: 4px;
@@ -117,9 +117,12 @@ a {
 	border-radius: 4px;
 }*/
 
+.user {
+	display: inline-block;
+}
 
 .user-image {
-	/*float: left;*/
+	float: left;
 }
 
 .user-image img {
@@ -127,7 +130,7 @@ a {
 }
 
 .user-info {
-	/*float: left;*/
+	float: left;
 	padding-top: 2px;
 	padding-left: 5px;
 }
@@ -144,6 +147,7 @@ a {
 
 .message-content {
 	padding-top: 5px;
+	display: block;
 }
 
 
