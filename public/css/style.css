@@ -1,5 +1,8 @@
 body {
-	font-family: 'Oxygen', sans-serif;
+	padding: 50px;
+	font: 14px;
+	font-family: 'Oxygen', sans-serif; 
+	background-image: url("../img/snow_mountains.jpg");
 }
 
 .form_reset{
@@ -8,14 +11,6 @@ body {
 	background-color: initial;
 	width: initial;
 	height: initial;
-}
-
-/**
- * Default styling
- */
-body {
-    padding: 50px;
-    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
