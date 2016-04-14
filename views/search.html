@@ -14,7 +14,7 @@
 <body>
 
 
-	<h1>SUMMIT-CALIFORNIA EDITION</h1>
+
 	<!--Help Button-->
 	<div class="btn-group help-btn">
 		<button type="button" class="btn btn-default">?</button>
@@ -22,6 +22,8 @@
 
 	<!-- White box -->
 	<div class="row form-row" >
+	<h1>SUMMIT-CALIFORNIA EDITION</h1>
+	<hr class="header-line"></hr>
 		<div class ="form-box">
 			<!--Share Experience-->
 			<form id="required-form" action="/home" method="get" class="form_reset">
@@ -64,9 +66,7 @@
 	<script type="text/javascript" src="js/bootstrap.js"></script>
 	<script type="text/javascript">
 		$("#required-form").submit( function ( event ){
-			//event.preventDefault();
-			
-			console.log ( "hello");
+			//event.preventDefault();			
 			if ( ( $("#sel1").val() == null ) && ( $("#sel2").val() == null ))
 			{
 				alert("You must select valid skill level and ski resort");
