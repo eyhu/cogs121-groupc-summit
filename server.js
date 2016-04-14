@@ -161,12 +161,17 @@ io.on("connection", function(socket) {
   		var date = new Date();
 
   		//Just Checking for what user says
-   		console.log ( user.username +": " + msg );
+   		/*console.log ( user.username +": " + msg );
+   		console.log(msg.message);
+   		console.log(msg.level);
+   		console.log(msg.resort);*/
 
 		var NewsFeed = new models.message({
 	    	"user": user.username,
 	    	"photo": user.photo,
-		    "message": msg,
+		    "message": msg.message,
+		    "level": msg.level,
+		    "resort": msg.resort,
 		    "posted": date
 	    });
 
