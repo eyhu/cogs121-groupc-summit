@@ -1,9 +1,3 @@
-body {
-	padding: 50px;
-	font: 14px;
-	font-family: 'Oxygen', sans-serif; 
-	background-image: url("../img/snow_mountains_50.png");
-}
 
 .form_reset{
 	border: initial;
@@ -15,15 +9,4 @@ body {
 
 a {
     color: #00B7FF;
-}
-
-
-.container {
-    padding-top: 174px;
-    padding-bottom: 80px;
-    background-image: url("//res.cloudinary.com/hrscywv4p/image/upload/c_limit,f_auto,h_1500,q_90,w_2000/v1/346044/giphy_hpkb4j.gif");
-    background-color: transparent;
-    background-size: cover;
-    background-position: 50% 50%;
-    background-repeat: no-repeat;
 }
