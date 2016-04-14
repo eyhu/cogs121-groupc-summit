@@ -38,12 +38,12 @@
 
 
 				<!--Share Experience-->
-				<form action="/home" method="get" class="form_reset">
+				<form id="required-form" action="/home" method="get" class="form_reset">
 					<!-- Skill Dropdown menu -->
 					<div class="form-group">
 					  <label for="sel1">Select Skill Level:</label>
 					  <select class="form-control skill-level" name="level" id="sel1">
-					  	<option selected disabled style="display:none;">Select Your Skill Level</option>
+					  	<option value="wrong" selected disabled style="display:none;">Select Your Skill Level</option>
 					    <option>Beginner</option>
 					    <option>Intermediate</option>
 					    <option>Expert</option>
@@ -55,8 +55,8 @@
 					<!-- Skill Resort -->
 					<div class="form-group">
 					  <label for="sel1">Select Ski Resort:</label>
-					  <select class="form-control ski-resort" name="resort" id="sel1">
-					  	<option selected disabled style="display:none;">Select a Ski Resort</option>
+					  <select class="form-control ski-resort" name="resort" id="sel2">
+					  	<option value="wrong" selected disabled style="display:none;">Select a Ski Resort</option>
 					    <option>Snow Summit</option>
 					    <option>Bear Mountain</option>
 					    <option>Mammoth</option>
@@ -67,7 +67,7 @@
 
 					<!-- Share Experience -->
 					<div class="btn-group">
-						<input type="submit" value="Share Experience" class="btn btn-default"/>
+						<input type="submit" value="Share Experience" class="btn btn-default submit-btn"/>
 					</div>
 				</form>
 
@@ -77,5 +77,29 @@
 
 	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.js"></script>
+	<script type="text/javascript">
+		$("#required-form").submit( function ( event ){
+			//event.preventDefault();
+			
+			console.log ( "hello");
+			if ( ( $("#sel1").val() == null ) && ( $("#sel1").val() == null ))
+			{
+				alert("You must select valid skill level and ski resort");
+				return false;
+			}
+			else if (  $("#sel1").val() == null )
+			{
+				alert("You must select valid skill level");
+				return false;
+			}
+			else if ( $("#sel2").val() == null  )
+			{
+				alert("You must select valid ski resort");
+				return false;
+			}
+
+		});
+
+	</script>
 </body>
 </html>
