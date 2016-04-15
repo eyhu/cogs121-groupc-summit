@@ -17,7 +17,7 @@
 
 	<!--Help Button-->
 	<div class="btn-group help-btn">
-		<button type="button" class="btn btn-default">?</button>
+		<button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#helpModal">?</button>
 	</div>
 
 	<!-- White box -->
@@ -56,11 +56,26 @@
 
 				<!-- Share Experience -->
 				<div class="btn-group">
-					<input type="submit" value="Share Experience" class="btn btn-default submit-btn"/>
+					<input type="submit" value="Share Experience" class="btn btn-primary submit-btn"/>
 				</div>
 			</form>
 		</div>
 	</div>
+
+	<div id="helpModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title">Help Documentation</h4>
+        </div>
+        <div class="modal-body">
+          <p>The purpose of Summit is to allow users to freely share their experiences at different resorts and communicate with those who share the same interests. Users can decide a chat/community by specificying their skill levels and locations. Just simply start typing, leave your thoughts and click "Share" to post your comment.</p>
+          <p>If you like what others have said, you can also start a one-on-one private conversation. </p>
+          <p>If you have any other questions, please feel free to contact snow@summit.com. </p>
+        </div>
+      </div>
+    </div>
+  </div>
 
 	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/bootstrap.js"></script>
